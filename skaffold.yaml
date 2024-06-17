@@ -1,0 +1,22 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+metadata:
+    name: microservice-auth-srv
+build:
+    artifacts:
+        - image: leavend/auth-service
+          context: auth-service
+          sync:
+              manual:
+                  - src: "src/**/*.ts"
+                    dest: .
+          docker:
+              dockerfile: Dockerfile
+    # googleCloudBuild:
+    #     projectId: ticketing-dev-424721
+    local:
+        push: false
+deploy:
+    kubectl:
+        manifests:
+            - ./infra-service/k8s/*.yaml

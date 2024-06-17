@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: db-config
+data:
+    init.sql: |
+        CREATE DATABASE auth_service;
+    host: mysql
+    dbName: auth_service

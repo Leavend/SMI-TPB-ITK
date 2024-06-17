@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: auth-depl
+    labels:
+        app: auth
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: auth
+    template:
+        metadata:
+            labels:
+                app: auth
+        spec:
+            containers:
+                - name: auth
+                  image: leavend/auth-service
+                  ports:
+                      - containerPort: 2001
+                  env:
+                      - name: AMQP_URL
+                        value: "amqp://guest:guest@rabbitmq:5672/"
+                      - name: DB_HOST
+                        valueFrom:
+                            configMapKeyRef:
+                                name: db-config
+                                key: host
+                      - name: DB_NAME
+                        valueFrom:
+                            configMapKeyRef:
+                                name: db-config
+                                key: dbName
+                      - name: DB_USERNAME
+                        valueFrom:
+                            secretKeyRef:
+                                name: mysql-secrets
+                                key: username
+                      - name: DB_PASSWORD
+                        valueFrom:
+                            secretKeyRef:
+                                name: mysql-secrets
+                                key: password
+                      - name: DB_TYPE
+                        valueFrom:
+                            secretKeyRef:
+                                name: mysql-secrets
+                                key: type
+                      - name: JWT_SECRET
+                        valueFrom:
+                            secretKeyRef:
+                                name: mysql-secrets
+                                key: jwt_secret
