@@ -10,6 +10,7 @@ This project is aimed at developing a System Management Information (SMI) for TP
 
 The project is organized into the following directories and files:
 
+```sh
 SMI-TPB-ITK/
 ├── skaffold.yaml # Skaffold configuration file for Kubernetes
 ├── auth-service # Authentication service module
@@ -99,6 +100,7 @@ SMI-TPB-ITK/
 │ │ ├── auth-service-depl.yaml # Auth service deployment
 │ │ ├── auth-service-srv.yaml # Auth service service definition
 │ │ └── ingress-srv.yaml # Ingress service configuration
+```
 
 ## Installation
 
