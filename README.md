@@ -11,94 +11,94 @@ This project is aimed at developing a System Management Information (SMI) for TP
 The project is organized into the following directories and files:
 
 SMI-TPB-ITK/
-├── skaffold.yaml
-├── auth-service
-| ├── src
-| | ├── controllers
-| | | ├── role-controller.ts
-| | | └── user-controller.ts
-| | ├── database
-| | | ├── index.ts
-| | | └── init.ts
-| | ├── datasources
-| | | ├── dosen-datasource.ts
-| | | ├── mahasiswa-datasource.ts
-| | | ├── role-datasource.ts
-| | | ├── tendik-datasource.ts
-| | | ├── token-datasource.ts
-| | | ├── user-datasource.ts
-| | | └── user-role-datasource.ts
-| | ├── interfaces
-| | | ├── enum
-| | | | ├── code-enum.ts
-| | | | └── user-enum.ts
-| | | ├── dosen-interface.ts
-| | | ├── mahasiswa-interface.ts
-| | | ├── role-interface.ts
-| | | ├── tendik-interface.ts
-| | | ├── token-interface.ts
-| | | ├── user-interface.ts
-| | | └── user-role-interface.ts
-| | ├── middlewares
-| | | └── index.middleware.ts
-| | ├── models
-| | | ├── dosen-model.ts
-| | | ├── mahasiswa-model.ts
-| | | ├── role-model.ts
-| | | ├── tendik-model.ts
-| | | ├── token-model.ts
-| | | ├── user-model.ts
-| | | └── user-role-model.ts
-| | ├── permissions
-| | | └── index.ts
-| | ├── routers
-| | | ├── role-router.ts
-| | | └── user-router.ts
-| | ├── services
-| | | ├── consume-message-service.ts
-| | | ├── dosen-service.ts
-| | | ├── email-service.ts
-| | | ├── mahasiswa-service.ts
-| | | ├── message-service.ts
-| | | ├── role-service.ts
-| | | ├── tendik-service.ts
-| | | ├── token-service.ts
-| | | └── user-role-service.ts
-| | | ├── user-service.ts
-| | ├── templates
-| | | └── email.html
-| | ├── utils
-| | | └── index.utils.ts
-| | └── validators
-| | | └── user-validator-schema.ts
-| ├── .dockerignore
-| ├── .gitignore
-| ├── .prettier
-| ├── Dockerfile
-| ├── index.ts
-| ├── package-lock.json
-| ├── package.json
-| └── tsconfig.json
-├── infra-service
-| ├── k8s
-| | ├── config_secret
-| | | ├── configmap-depl.yaml
-| | | ├── configmap-rabbit.yaml
-| | | ├── secretkey-depl.yaml
-| | | └── secretkey-rabbit.yaml
-| | ├── db
-| | | ├── mysql-depl.yaml
-| | | ├── mysql-srv.yaml
-| | | ├── pv-depl.yaml
-| | | └── pvc-depl.yaml
-| | ├── rabbitmq
-| | | ├── pv-depl.yaml
-| | | ├── pvc-depl.yaml
-| | | ├── rabbit-srv.yaml
-| | | └── rabbit-stateful.yaml
-| | ├── auth-service-depl.yaml
-| | ├── auth-service-srv.yaml
-| | └── ingress-srv.yaml
+├── skaffold.yaml # Skaffold configuration file for Kubernetes
+├── auth-service # Authentication service module
+│ ├── src # Source code for the auth service
+│ │ ├── controllers # Controllers handle HTTP requests
+│ │ │ ├── role-controller.ts
+│ │ │ └── user-controller.ts
+│ │ ├── database # Database connection and initialization
+│ │ │ ├── index.ts
+│ │ │ └── init.ts
+│ │ ├── datasources # Data source files for different entities
+│ │ │ ├── dosen-datasource.ts
+│ │ │ ├── mahasiswa-datasource.ts
+│ │ │ ├── role-datasource.ts
+│ │ │ ├── tendik-datasource.ts
+│ │ │ ├── token-datasource.ts
+│ │ │ ├── user-datasource.ts
+│ │ │ └── user-role-datasource.ts
+│ │ ├── interfaces # Interfaces for type definitions
+│ │ │ ├── enum
+│ │ │ │ ├── code-enum.ts
+│ │ │ │ └── user-enum.ts
+│ │ │ ├── dosen-interface.ts
+│ │ │ ├── mahasiswa-interface.ts
+│ │ │ ├── role-interface.ts
+│ │ │ ├── tendik-interface.ts
+│ │ │ ├── token-interface.ts
+│ │ │ ├── user-interface.ts
+│ │ │ └── user-role-interface.ts
+│ │ ├── middlewares # Middlewares for request processing
+│ │ │ └── index.middleware.ts
+│ │ ├── models # Database models
+│ │ │ ├── dosen-model.ts
+│ │ │ ├── mahasiswa-model.ts
+│ │ │ ├── role-model.ts
+│ │ │ ├── tendik-model.ts
+│ │ │ ├── token-model.ts
+│ │ │ ├── user-model.ts
+│ │ │ └── user-role-model.ts
+│ │ ├── permissions # Permissions management
+│ │ │ └── index.ts
+│ │ ├── routers # Routers for endpoint definitions
+│ │ │ ├── role-router.ts
+│ │ │ └── user-router.ts
+│ │ ├── services # Service layer for business logic
+│ │ │ ├── consume-message-service.ts
+│ │ │ ├── dosen-service.ts
+│ │ │ ├── email-service.ts
+│ │ │ ├── mahasiswa-service.ts
+│ │ │ ├── message-service.ts
+│ │ │ ├── role-service.ts
+│ │ │ ├── tendik-service.ts
+│ │ │ ├── token-service.ts
+│ │ │ ├── user-role-service.ts
+│ │ │ └── user-service.ts
+│ │ ├── templates # Email templates
+│ │ │ └── email.html
+│ │ ├── utils # Utility functions
+│ │ │ └── index.utils.ts
+│ │ └── validators # Schema validators
+│ │ └── user-validator-schema.ts
+│ ├── .dockerignore # Files and directories to ignore in Docker
+│ ├── .gitignore # Files and directories to ignore in Git
+│ ├── .prettier # Prettier configuration file
+│ ├── Dockerfile # Docker configuration file
+│ ├── index.ts # Entry point for the auth service
+│ ├── package-lock.json # Lockfile for npm
+│ ├── package.json # npm package configuration file
+│ └── tsconfig.json # TypeScript configuration file
+├── infra-service # Infrastructure service configuration
+│ ├── k8s # Kubernetes configuration files
+│ │ ├── config_secret # ConfigMaps and Secrets for Kubernetes
+│ │ │ ├── configmap-depl.yaml
+│ │ │ ├── configmap-rabbit.yaml
+│ │ │ ├── secretkey-depl.yaml
+│ │ │ └── secretkey-rabbit.yaml
+│ │ ├── db # Database deployment files
+│ │ │ ├── mysql-depl.yaml
+│ │ │ ├── mysql-srv.yaml
+│ │ │ ├── pv-depl.yaml
+│ │ │ └── pvc-depl.yaml
+│ │ ├── rabbitmq # RabbitMQ deployment files
+│ │ │ ├── pv-depl.yaml
+│ │ │ ├── pvc-depl.yaml
+│ │ │ ├── rabbit-srv.yaml
+│ │ │ └── rabbit-stateful.yaml
+│ │ ├── auth-service-depl.yaml # Auth service deployment
+│ │ ├── auth-service-srv.yaml # Auth service service definition
+│ │ └── ingress-srv.yaml # Ingress service configuration
 
 ## Installation
 
