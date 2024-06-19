@@ -10,7 +10,6 @@ The Course TPB Service is a component of the System Management Information (SMI)
 -   **Enrollment Management:** Handle student enrollment for courses, including adding and dropping courses.
 -   **Attendance Tracking:** Record and monitor student attendance for each course session.
 -   **Grading System:** Manage and record grades for students, ensuring a streamlined process for grade submission and tracking.
--   **Notifications:** Send notifications to students and instructors regarding course updates, schedule changes, and important announcements.
 -   **Reporting:** Generate reports on course performance, enrollment statistics, and other key metrics to support administrative decision-making.
 
 ### Objectives
@@ -22,10 +21,9 @@ The Course TPB Service is a component of the System Management Information (SMI)
 
 ### Technology Stack
 
--   **Backend:** Node.js, Express
--   **Database:** MongoDB
--   **Frontend:** React.js (if applicable)
--   **APIs:** RESTful APIs for integration with other SMI-TPB-ITK services
+-   **Framework:** Node.js, Express
+-   **Database:** ---
+-   **MessageBroker:** RabbitMQ for integration with other SMI-TPB-ITK services
 -   **Deployment:** Docker, Kubernetes
 
 ### Contact
