@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+    name: auth-srv
+spec:
+    selector:
+        app: auth
+    ports:
+        - protocol: TCP
+          port: 2001
+          targetPort: 2001
+    type: NodePort
