@@ -2,4 +2,3 @@ node_modules
 logs
 .env.*
 .env
-package.json.copy
